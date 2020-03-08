@@ -3,4 +3,4 @@
 """
 __author__ = 'Fayzullin R.R'
 
-from src.gui.GUI import GUI
+from src.gui.GUI import MainGUI, LoginGUI

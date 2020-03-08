@@ -19,17 +19,18 @@ class DB:
         cursor = self._conn.cursor()
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name=?", [PBX_TABLE_NAME])
         if not cursor.fetchall():
-            cursor.execute("""CREATE TABLE {} (id int primary key,
+            cursor.execute("""CREATE TABLE {} (id integer primary key autoincrement,
                                                host text,
                                                port int,
                                                username text,
-                                               password text)""".format(PBX_TABLE_NAME))
+                                               password text,
+                                               last_conn_time text NULL)""".format(PBX_TABLE_NAME))
             self._conn.commit()
 
     def get_saved_pbx_credentials(self) -> list:
         """ :return credentials of previous saved sessions """
         cursor = self._conn.cursor()
-        cursor.execute('SELECT "host", "port", "username", "password" FROM "PBX_LIST"')
+        cursor.execute('SELECT "id", "host", "port", "username", "password", "last_conn_time" FROM "PBX_LIST"')
         return cursor.fetchall()
 
     def save_pbx_credentials(self, host: str, port: int, username: str, password: str) -> None:
