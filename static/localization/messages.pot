@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+
+#: /home/rustik665/PycharmProjects/asterisk-ami-helper/src/gui/GUI.py:54
+msgid "Hostname"
+msgstr "IP-адрес или FQDN"
+
+#: /home/rustik665/PycharmProjects/asterisk-ami-helper/src/gui/GUI.py:59
+msgid "AMI port"
+msgstr "AMI порт"
+
+#: /home/rustik665/PycharmProjects/asterisk-ami-helper/src/gui/GUI.py:64
+msgid "Login"
+msgstr "Логин"
+
+#: /home/rustik665/PycharmProjects/asterisk-ami-helper/src/gui/GUI.py:69
+msgid "Password"
+msgstr "Пароль"
+
+#: /home/rustik665/PycharmProjects/asterisk-ami-helper/src/gui/GUI.py:74
+msgid "Connect"
+msgstr "Подключиться"
+
+#: /home/rustik665/PycharmProjects/asterisk-ami-helper/src/gui/GUI.py:77
+msgid "Last connections"
+msgstr "Предыдущие подключения"
+

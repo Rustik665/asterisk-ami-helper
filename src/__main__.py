@@ -6,6 +6,7 @@ __author__ = 'Fayzullin R.R'
 from src.gui import MainGUI, LoginGUI
 from src.configuration import Configurator
 from src.logger import Logger
+from src.asterisk_connector import Asterisk
 
 
 class Main:
@@ -15,6 +16,8 @@ class Main:
         self.configurator = Configurator()
         self.logger = None
         self.login_gui = LoginGUI()
+        self.main_gui = None
+        self.asterisk = None
 
     def start(self):
         """ Test function """
@@ -24,7 +27,11 @@ class Main:
 
         self.logger.write_log(2, 'Start in {}'.format(__name__))
 
-        self.login_gui.draw_login_window(saved_pbx_connections)
+        self.asterisk = self.login_gui.login_window(saved_pbx_connections)
+        self.main_gui = MainGUI()
+        self.main_gui.do_something(self.asterisk)
+
+        self.asterisk.connection.close()
 
 
 if __name__ == '__main__':
